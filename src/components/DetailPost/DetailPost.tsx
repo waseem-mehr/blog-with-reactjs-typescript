@@ -37,7 +37,7 @@ const DetailPost:FC = ()=>{
 
                     <div className="card-body ">
                         
-                        <img  src={post.thumbnailUrl} height="400" width="100%"/>
+                        <img  src={post.thumbnailUrl} alt={post.mainHeading} height="400" width="100%"/>
                         <h3 className=" mt-3 card-title">{post.mainHeading}</h3>
                         <strong className="pt-2 pb-2">Dated : {post.publishDate}</strong>
                         <p className="pt-3">{post.content}</p>
