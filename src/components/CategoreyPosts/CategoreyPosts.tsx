@@ -20,8 +20,8 @@ const CategoreyPosts:FC = ()=>{
     const {categorey}=useParams<{categorey?: string}>()
     const [posts,setPosts]=useState<TPost[]>([])
     
-    useEffect(()=>{filterPosts(categorey)},[categorey])
-
+    useEffect(()=>{filterPosts(categorey);window.scrollTo(0, 0);},[categorey])
+    
     //filter the required posts from all the posts
 
     const filterPosts=(categorey:string="")=>{

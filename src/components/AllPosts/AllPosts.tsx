@@ -2,6 +2,7 @@ import React,{FC} from "react"
 import Post from "../Post/Post"
 import { posts } from "../../PostsData"
 
+
 const AllPosts:FC = ()=>{
     
     return <div >
