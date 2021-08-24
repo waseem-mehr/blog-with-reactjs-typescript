@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Layout from './hoc/Layout/Layout';
+import Home from './pages/Home/Home';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
+import CategoreyPosts from './components/CategoreyPosts/CategoreyPosts';
+import DetailPost from './components/DetailPost/DetailPost';
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 
-function App() {
+const App = ()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Route path="/" component={Home} exact/>
+            <Route path="/posts/categorey/:categorey/" component={CategoreyPosts} exact/>
+            <Route path="/post/:slug/" component={DetailPost} exact/>
+            <Route component={PageNotFound}/>
+          </Switch>
+        </Layout>
+      </BrowserRouter>
+      
     </div>
   );
 }
